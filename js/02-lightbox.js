@@ -37,5 +37,4 @@ function openGallery(event) {
     return;
   }
 }
-
 galleryList.addEventListener("click", openGallery);
