@@ -25,5 +25,17 @@ function createGallaryMarkup(galleryItems) {
     .join("");
 }
 
+document.addEventListener("keyup", closeGallery)
+functio closeGallery(event) {
+  if(event.code === 'Escape') {
+    lightbox.close();
+}
 
-console.log(galleryItems);
+function openGallery(event) {
+  event.preventDefault();
+  if (!event.target.classList.contains("gallery__image")) {
+    return;
+  }
+}
+
+galleryList.addEventListener("click", openGallery);
