@@ -25,7 +25,7 @@ function createGallaryMarkup(galleryItems) {
     .join("");
 }
 
-document.addEventListener("keyup", closeGallery)
+galleryList.addEventListener("keyup", closeGallery)
 function closeGallery(event) {
   if(event.code === 'Escape') {
     lightbox.close();
