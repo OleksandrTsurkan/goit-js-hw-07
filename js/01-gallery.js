@@ -1,21 +1,22 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
-const gallery = document.querySelector('.gallery');
-const galleryMarkup = createGalleryMarkup(galleryItems);
+
+const galleryList = document.querySelector(".gallery");
+const galleryMarkup = createGallaryMarkup(galleryItems);
 let instance;
 galleryList.insertAdjacentHTML("beforeend", galleryMarkup);
 
-function galleryMarkup(galleryItems) {
+function createGallaryMarkup(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
       return `
     <li class="gallery__item">
-  <a class="gallery__link" href="${item.original}">
+  <a class="gallery__link" href="${original}">
     <img
       class="gallery__image"
-      src="${item.preview}"
-      data-source="${item.original}"
-      alt="${item.description}"
+      src="${preview}"
+      data-source="${original}"
+      alt="${description}"
     />
   </a>
 </li>
@@ -23,6 +24,7 @@ function galleryMarkup(galleryItems) {
     })
     .join("");
 }
+
 function closeModal(event) {
   if (event.code === "Escape") {
     document.removeEventListener("keyup", closeModal);
