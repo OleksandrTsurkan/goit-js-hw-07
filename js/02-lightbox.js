@@ -33,3 +33,10 @@ function openGallery(event) {
 }
 
 galleryList.addEventListener("click", openGallery);
+
+galleryList.addEventListener("keyup", closeGallery)
+function closeGallery(event) {
+  if(event.code === 'Escape') {
+    lightbox.close();
+}
+}
